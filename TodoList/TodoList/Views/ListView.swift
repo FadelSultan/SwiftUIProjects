@@ -9,17 +9,15 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State private var items:[String] = [
-        "This is first item in the list ...",
-        "This is second item.",
-        "Third item "
-    ]
+    @EnvironmentObject private var listViewModel:ListViewModel
     
     var body: some View {
         List {
-            ForEach(items, id: \.self) { item in
-                ListRowView(title: item)
+            ForEach(listViewModel.items) { item in
+                ListRowView(item: item)
             }
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform: listViewModel.moveItem)
         }
         .navigationTitle("Todo List 📝")
         .toolbar {
@@ -38,7 +36,7 @@ struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ListView()
-        }
+        }.environmentObject(ListViewModel())
     }
 }
 
