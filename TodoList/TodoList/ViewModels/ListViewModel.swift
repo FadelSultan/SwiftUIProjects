@@ -10,6 +10,7 @@ import Foundation
 class ListViewModel:ObservableObject {
     
    @Published var items:[ItemModel] = []
+    
     init(){
         getItems()
     }
@@ -36,5 +37,11 @@ class ListViewModel:ObservableObject {
         items.append(
             ItemModel(title: title, isComplete: false)
         )
+    }
+    
+    func update(item: ItemModel) {
+        if let index = items.firstIndex(where: {$0.id == item.id}) {
+            items[index] = item.updateCompletion()
+        }
     }
 }

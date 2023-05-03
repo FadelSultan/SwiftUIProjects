@@ -15,10 +15,13 @@ struct AddView: View {
     
     @State private var textFieldText:String = ""
     
+    @State private var alertTitle:String = ""
+    @State private var isShowAlert:Bool = false
+    
     var body: some View {
         ScrollView {
             VStack {
-                TextField("Type somthing here ...", text: $textFieldText)
+                TextField("Type something here ...", text: $textFieldText)
                     .padding()
                     .background(Color.gray.opacity(0.2))
                     .frame(height: 55)
@@ -41,16 +44,28 @@ struct AddView: View {
                 
         }
         .navigationTitle("Add an item ✏️")
+        .alert(isPresented: $isShowAlert, content: getAlert)
     }
     
     
     func saveButtonPressed(){
-        listViewModel.addItem(title: textFieldText)
-        dismiss()
+        if textIsAppropriate() {
+            listViewModel.addItem(title: textFieldText)
+            dismiss()
+        }
     }
     
     func textIsAppropriate() -> Bool {
-        return textFieldText.count > 3
+        if textFieldText.count < 3 {
+            alertTitle = "Your new todo item must to be at least 3 characters long!! 😅"
+            isShowAlert.toggle()
+            return false
+        }
+        return true
+    }
+    
+    func getAlert() -> Alert {
+        return Alert(title: Text(alertTitle))
     }
     
 }
