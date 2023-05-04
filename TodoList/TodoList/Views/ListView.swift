@@ -15,6 +15,7 @@ struct ListView: View {
         ZStack {
             if listViewModel.items.isEmpty {
                 NoItemsView()
+                    .padding(.top,40)
                     .transition(AnyTransition.opacity.animation(.easeIn))
             }else {
                 List {
@@ -48,7 +49,9 @@ struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ListView()
-        }.environmentObject(ListViewModel())
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(ListViewModel())
     }
 }
 
