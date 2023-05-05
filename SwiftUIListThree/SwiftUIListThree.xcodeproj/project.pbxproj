@@ -11,6 +11,7 @@
 		E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57410732A053BC5003D3BC9 /* ContentView.swift */; };
 		E57410762A053BC6003D3BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57410752A053BC6003D3BC9 /* Assets.xcassets */; };
 		E57410792A053BC6003D3BC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57410782A053BC6003D3BC9 /* Preview Assets.xcassets */; };
+		E57410802A056D46003D3BC9 /* MaginificationGusterBootcomp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574107F2A056D46003D3BC9 /* MaginificationGusterBootcomp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E57410732A053BC5003D3BC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E57410752A053BC6003D3BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E57410782A053BC6003D3BC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E574107F2A056D46003D3BC9 /* MaginificationGusterBootcomp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaginificationGusterBootcomp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E57410712A053BC5003D3BC9 /* SwiftUIListThreeApp.swift */,
 				E57410732A053BC5003D3BC9 /* ContentView.swift */,
+				E574107F2A056D46003D3BC9 /* MaginificationGusterBootcomp.swift */,
 				E57410752A053BC6003D3BC9 /* Assets.xcassets */,
 				E57410772A053BC6003D3BC9 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57410802A056D46003D3BC9 /* MaginificationGusterBootcomp.swift in Sources */,
 				E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */,
 				E57410722A053BC5003D3BC9 /* SwiftUIListThreeApp.swift in Sources */,
 			);
