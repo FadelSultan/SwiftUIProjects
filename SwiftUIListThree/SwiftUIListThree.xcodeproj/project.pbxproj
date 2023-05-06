@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E56BDD242A06C8F1000C2A25 /* DrageGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */; };
+		E56BDD262A06CF52000C2A25 /* DrageGestureBootcamp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BDD252A06CF52000C2A25 /* DrageGestureBootcamp2.swift */; };
 		E56F0B692A05B0FD00E509E7 /* RotationGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0B682A05B0FD00E509E7 /* RotationGestureBootcamp.swift */; };
 		E57410722A053BC5003D3BC9 /* SwiftUIListThreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57410712A053BC5003D3BC9 /* SwiftUIListThreeApp.swift */; };
 		E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57410732A053BC5003D3BC9 /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrageGestureBootcamp.swift; sourceTree = "<group>"; };
+		E56BDD252A06CF52000C2A25 /* DrageGestureBootcamp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrageGestureBootcamp2.swift; sourceTree = "<group>"; };
 		E56F0B682A05B0FD00E509E7 /* RotationGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureBootcamp.swift; sourceTree = "<group>"; };
 		E574106E2A053BC5003D3BC9 /* SwiftUIListThree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIListThree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57410712A053BC5003D3BC9 /* SwiftUIListThreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListThreeApp.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				E574107F2A056D46003D3BC9 /* MaginificationGusterBootcomp.swift */,
 				E56F0B682A05B0FD00E509E7 /* RotationGestureBootcamp.swift */,
 				E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */,
+				E56BDD252A06CF52000C2A25 /* DrageGestureBootcamp2.swift */,
 				E57410752A053BC6003D3BC9 /* Assets.xcassets */,
 				E57410772A053BC6003D3BC9 /* Preview Content */,
 			);
@@ -151,6 +154,7 @@
 				E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */,
 				E57410722A053BC5003D3BC9 /* SwiftUIListThreeApp.swift in Sources */,
 				E56BDD242A06C8F1000C2A25 /* DrageGestureBootcamp.swift in Sources */,
+				E56BDD262A06CF52000C2A25 /* DrageGestureBootcamp2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
