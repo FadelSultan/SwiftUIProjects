@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUIListThreeApp: App {
     var body: some Scene {
         WindowGroup {
-            RotationGestureBootcamp()
+            ScrollViewReaderBootcamp()
         }
     }
 }
