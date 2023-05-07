@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScrollViewReaderBootcamp: View {
+    
+    
     var body: some View {
         
         ScrollViewReader { proxy in
@@ -19,28 +21,23 @@ struct ScrollViewReaderBootcamp: View {
                     }
                 }
                 
-                ForEach(0..<50 , id: \.self) { index in
-                    
-                    let randomColor:Color = [Color.white,Color.blue,Color.pink , Color.purple , Color.brown ,Color.green].randomElement()!
+                ForEach(0..<50, id: \.self) { index in
                     
                     Text("This is index #\(index)")
                         .font(.headline)
                         .frame(height: 200)
                         .frame(maxWidth: .infinity)
-                        .background(randomColor)
+                        .background(Color.white)
                         .cornerRadius(20)
-                        .shadow(color: randomColor == .white ? .gray.opacity(0.5) : randomColor.opacity(1),radius: 10)
+                        .shadow(color: .gray.opacity(0.5),radius: 10)
                         .padding()
                         .id(index)
                 }
             }
         }
-        
-        
-        
-        
-        
     }
+    
+    
 }
 
 struct ScrollViewReaderBootcamp_Previews: PreviewProvider {
