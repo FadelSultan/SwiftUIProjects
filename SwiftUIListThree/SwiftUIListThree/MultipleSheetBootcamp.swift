@@ -10,6 +10,7 @@ import SwiftUI
 struct RandomModel:Identifiable {
     let id:String = UUID().uuidString
     let title:String
+    let backgroundColor:Color
 }
 
 struct MultipleSheetBootcamp: View {
@@ -23,7 +24,7 @@ struct MultipleSheetBootcamp: View {
   
             VStack(spacing:20){
                 Button {
-                    selectedModel = RandomModel(title: "Screen one".capitalized)
+                    selectedModel = RandomModel(title: "Screen one".capitalized, backgroundColor: .green)
                 } label: {
                     Text("Sheet one".capitalized)
                         .font(.title2)
@@ -36,7 +37,7 @@ struct MultipleSheetBootcamp: View {
                 }
                 
                 Button {
-                    selectedModel = RandomModel(title: "Screen two  ".capitalized)
+                    selectedModel = RandomModel(title: "Screen two  ".capitalized, backgroundColor: .pink)
                 } label: {
                     Text("Sheet tow".capitalized)
                         .font(.title2)
@@ -68,7 +69,7 @@ struct NextScreen:View {
     
     var body: some View {
         ZStack {
-            Color.green
+            selectedModel.backgroundColor
                 .ignoresSafeArea()
             
             Text("\(selectedModel.title)")
