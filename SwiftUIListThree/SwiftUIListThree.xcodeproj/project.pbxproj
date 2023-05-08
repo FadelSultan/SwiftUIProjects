@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBA0F8242A08D3A80083D6E1 /* MultipleSheetBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */; };
 		BBED417E2A07690500174233 /* ScrollViewReaderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBED417D2A07690500174233 /* ScrollViewReaderBootcamp.swift */; };
 		E535B1A52A080F3400BC7251 /* GeometryaderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535B1A42A080F3400BC7251 /* GeometryaderBootcamp.swift */; };
 		E56BDD242A06C8F1000C2A25 /* DrageGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSheetBootcamp.swift; sourceTree = "<group>"; };
 		BBED417D2A07690500174233 /* ScrollViewReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReaderBootcamp.swift; sourceTree = "<group>"; };
 		E535B1A42A080F3400BC7251 /* GeometryaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryaderBootcamp.swift; sourceTree = "<group>"; };
 		E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrageGestureBootcamp.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				E56BDD252A06CF52000C2A25 /* DrageGestureBootcamp2.swift */,
 				BBED417D2A07690500174233 /* ScrollViewReaderBootcamp.swift */,
 				E535B1A42A080F3400BC7251 /* GeometryaderBootcamp.swift */,
+				BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */,
 				E57410752A053BC6003D3BC9 /* Assets.xcassets */,
 				E57410772A053BC6003D3BC9 /* Preview Content */,
 			);
@@ -158,6 +161,7 @@
 				E56F0B692A05B0FD00E509E7 /* RotationGestureBootcamp.swift in Sources */,
 				E57410802A056D46003D3BC9 /* MaginificationGusterBootcomp.swift in Sources */,
 				E535B1A52A080F3400BC7251 /* GeometryaderBootcamp.swift in Sources */,
+				BBA0F8242A08D3A80083D6E1 /* MultipleSheetBootcamp.swift in Sources */,
 				E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */,
 				E57410722A053BC5003D3BC9 /* SwiftUIListThreeApp.swift in Sources */,
 				E56BDD242A06C8F1000C2A25 /* DrageGestureBootcamp.swift in Sources */,
