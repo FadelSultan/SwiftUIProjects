@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB7F93902A0A582A00F81CD4 /* HapticsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F938F2A0A582A00F81CD4 /* HapticsBootcamp.swift */; };
+		BB97DC0E2A0B59E60046566D /* NotificationBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97DC0D2A0B59E60046566D /* NotificationBootcamp.swift */; };
 		BBA0F8242A08D3A80083D6E1 /* MultipleSheetBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */; };
 		BBA0F8262A08E3440083D6E1 /* MaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F8252A08E3440083D6E1 /* MaskBootcamp.swift */; };
 		BBED417E2A07690500174233 /* ScrollViewReaderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBED417D2A07690500174233 /* ScrollViewReaderBootcamp.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		BB7F938F2A0A582A00F81CD4 /* HapticsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsBootcamp.swift; sourceTree = "<group>"; };
+		BB97DC0D2A0B59E60046566D /* NotificationBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBootcamp.swift; sourceTree = "<group>"; };
 		BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSheetBootcamp.swift; sourceTree = "<group>"; };
 		BBA0F8252A08E3440083D6E1 /* MaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskBootcamp.swift; sourceTree = "<group>"; };
 		BBED417D2A07690500174233 /* ScrollViewReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReaderBootcamp.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */,
 				BBA0F8252A08E3440083D6E1 /* MaskBootcamp.swift */,
 				BB7F938F2A0A582A00F81CD4 /* HapticsBootcamp.swift */,
+				BB97DC0D2A0B59E60046566D /* NotificationBootcamp.swift */,
 				E57410752A053BC6003D3BC9 /* Assets.xcassets */,
 				E57410772A053BC6003D3BC9 /* Preview Content */,
 			);
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA0F8262A08E3440083D6E1 /* MaskBootcamp.swift in Sources */,
+				BB97DC0E2A0B59E60046566D /* NotificationBootcamp.swift in Sources */,
 				E56F0B692A05B0FD00E509E7 /* RotationGestureBootcamp.swift in Sources */,
 				E57410802A056D46003D3BC9 /* MaginificationGusterBootcomp.swift in Sources */,
 				E535B1A52A080F3400BC7251 /* GeometryaderBootcamp.swift in Sources */,
