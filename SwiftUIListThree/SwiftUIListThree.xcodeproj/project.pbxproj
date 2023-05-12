@@ -15,6 +15,8 @@
 		E56BDD242A06C8F1000C2A25 /* DrageGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */; };
 		E56BDD262A06CF52000C2A25 /* DrageGestureBootcamp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BDD252A06CF52000C2A25 /* DrageGestureBootcamp2.swift */; };
 		E56F0B692A05B0FD00E509E7 /* RotationGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F0B682A05B0FD00E509E7 /* RotationGestureBootcamp.swift */; };
+		E5713F002A0E71A40024F03E /* CoreDataBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713EFF2A0E71A40024F03E /* CoreDataBootcamp.swift */; };
+		E5713F032A0E72E60024F03E /* FruitsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5713F012A0E72E60024F03E /* FruitsContainer.xcdatamodeld */; };
 		E57410722A053BC5003D3BC9 /* SwiftUIListThreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57410712A053BC5003D3BC9 /* SwiftUIListThreeApp.swift */; };
 		E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57410732A053BC5003D3BC9 /* ContentView.swift */; };
 		E57410762A053BC6003D3BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57410752A053BC6003D3BC9 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		E56BDD232A06C8F1000C2A25 /* DrageGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrageGestureBootcamp.swift; sourceTree = "<group>"; };
 		E56BDD252A06CF52000C2A25 /* DrageGestureBootcamp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrageGestureBootcamp2.swift; sourceTree = "<group>"; };
 		E56F0B682A05B0FD00E509E7 /* RotationGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureBootcamp.swift; sourceTree = "<group>"; };
+		E5713EFF2A0E71A40024F03E /* CoreDataBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBootcamp.swift; sourceTree = "<group>"; };
+		E5713F022A0E72E60024F03E /* FruitsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FruitsContainer.xcdatamodel; sourceTree = "<group>"; };
 		E574106E2A053BC5003D3BC9 /* SwiftUIListThree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIListThree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57410712A053BC5003D3BC9 /* SwiftUIListThreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListThreeApp.swift; sourceTree = "<group>"; };
 		E57410732A053BC5003D3BC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				BBA0F8232A08D3A80083D6E1 /* MultipleSheetBootcamp.swift */,
 				BBA0F8252A08E3440083D6E1 /* MaskBootcamp.swift */,
 				BB7F938F2A0A582A00F81CD4 /* HapticsBootcamp.swift */,
+				E5713EFF2A0E71A40024F03E /* CoreDataBootcamp.swift */,
+				E5713F012A0E72E60024F03E /* FruitsContainer.xcdatamodeld */,
 				E57410752A053BC6003D3BC9 /* Assets.xcassets */,
 				E57410772A053BC6003D3BC9 /* Preview Content */,
 			);
@@ -165,10 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA0F8262A08E3440083D6E1 /* MaskBootcamp.swift in Sources */,
+				E5713F002A0E71A40024F03E /* CoreDataBootcamp.swift in Sources */,
 				E56F0B692A05B0FD00E509E7 /* RotationGestureBootcamp.swift in Sources */,
 				E57410802A056D46003D3BC9 /* MaginificationGusterBootcomp.swift in Sources */,
 				E535B1A52A080F3400BC7251 /* GeometryaderBootcamp.swift in Sources */,
 				BBA0F8242A08D3A80083D6E1 /* MultipleSheetBootcamp.swift in Sources */,
+				E5713F032A0E72E60024F03E /* FruitsContainer.xcdatamodeld in Sources */,
 				E57410742A053BC5003D3BC9 /* ContentView.swift in Sources */,
 				BB7F93902A0A582A00F81CD4 /* HapticsBootcamp.swift in Sources */,
 				E57410722A053BC5003D3BC9 /* SwiftUIListThreeApp.swift in Sources */,
@@ -377,6 +385,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E5713F012A0E72E60024F03E /* FruitsContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E5713F022A0E72E60024F03E /* FruitsContainer.xcdatamodel */,
+			);
+			currentVersion = E5713F022A0E72E60024F03E /* FruitsContainer.xcdatamodel */;
+			path = FruitsContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E57410662A053BC5003D3BC9 /* Project object */;
 }
