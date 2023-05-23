@@ -15,6 +15,9 @@ class NotificationManager {
     static let instance = NotificationManager()
     
     func requestAuthorization() {
+        
+        
+        
         let options:UNAuthorizationOptions = [.alert, .sound , .badge ]
         UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
             if let error = error {
@@ -31,6 +34,7 @@ class NotificationManager {
         content.subtitle = "This was sooo easy!"
         content.sound = .default
         content.badge = 1
+        
         
         //Time
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
