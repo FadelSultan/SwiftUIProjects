@@ -12,7 +12,7 @@ struct HomeView: View {
     
     @EnvironmentObject private var vm:HomeViewModel
     
-    @State private var showportfolio:Bool = false
+    @State private var showPortfolio:Bool = false
     
     var body: some View {
         ZStack {
@@ -24,13 +24,13 @@ struct HomeView: View {
                 
                 columnTitles
                 
-                if !showportfolio {
+                if !showPortfolio {
                     allCoinsList
                     .transition(.move(edge: .leading))
                     
                 }
                 
-                if showportfolio {
+                if showPortfolio {
                     portfolioCoinsList
                         .transition(.move(edge: .trailing))
                         
@@ -59,24 +59,24 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView {
     private var HomeHeader:some View {
         HStack {
-            CircleButtonView(iconName: showportfolio ? "plus" : "info")
+            CircleButtonView(iconName: showPortfolio ? "plus" : "info")
                 .background(
-                    CircleButtonViewAnimation(isAnimat: $showportfolio)
+                    CircleButtonViewAnimation(isAnimat: $showPortfolio)
                     
                 )
             Spacer()
             
-            Text(showportfolio ? "Protfolio" : "Live Prices")
+            Text(showPortfolio ? "Portfolio" : "Live Prices")
                 .font(.headline)
                 .fontWeight(.heavy)
                 .foregroundColor(.theme.accent)
             
             Spacer()
             CircleButtonView(iconName: "chevron.right")
-                .rotationEffect(Angle(degrees: showportfolio ? 180 : 0))
+                .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
                 .onTapGesture {
                     withAnimation(.spring()) {
-                        showportfolio.toggle()
+                        showPortfolio.toggle()
                     }
                 }
         }
@@ -86,7 +86,7 @@ extension HomeView {
     private var allCoinsList:some View {
         List {
             ForEach(vm.allCoins) { coin in
-                CoinRowView(coin: coin, isShoweHoldingsColumn: false)
+                CoinRowView(coin: coin, isShowHoldingsColumn: false)
             }
         }
         .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
@@ -96,8 +96,8 @@ extension HomeView {
     
     private var portfolioCoinsList:some View {
         List {
-            ForEach(vm.protfolioCoins) { coin in
-                CoinRowView(coin: coin, isShoweHoldingsColumn: true)
+            ForEach(vm.portfolioCoins) { coin in
+                CoinRowView(coin: coin, isShowHoldingsColumn: true)
             }
         }
         .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
@@ -108,7 +108,7 @@ extension HomeView {
         HStack {
             Text("Coin")
             Spacer()
-            if showportfolio {
+            if showPortfolio {
                 Text("Holdings")
             }
             Text("Price")
