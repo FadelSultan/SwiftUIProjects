@@ -18,7 +18,7 @@ extension Double {
     ///
     private var currencyFormatter2:NumberFormatter {
  
-        var formatter = NumberFormatter()
+        let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
 //        formatter.locale = .current // deafult value
@@ -49,7 +49,7 @@ extension Double {
     ///
     private var currencyFormatter6:NumberFormatter {
  
-        var formatter = NumberFormatter()
+        let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
 //        formatter.locale = .current // deafult value
