@@ -16,8 +16,12 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
+            
+            
             Color.theme.background
                 .ignoresSafeArea()
+            
+            
             VStack {
                 
                 HomeHeader
@@ -27,18 +31,13 @@ struct HomeView: View {
                 if !showPortfolio {
                     allCoinsList
                     .transition(.move(edge: .leading))
-                    
                 }
                 
                 if showPortfolio {
                     portfolioCoinsList
                         .transition(.move(edge: .trailing))
-                        
                 }
-                
-                
-                
-                
+
                 Spacer(minLength: 0)
             }//:VSTACK
         }//:ZSTACK
