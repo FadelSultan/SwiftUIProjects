@@ -27,6 +27,7 @@
 		E565EF592A20F8D300CC3333 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565EF582A20F8D300CC3333 /* CoinRowView.swift */; };
 		E565EF5B2A20F8FE00CC3333 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565EF5A2A20F8FE00CC3333 /* PreviewProvider.swift */; };
 		E565EF5D2A20FE6200CC3333 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565EF5C2A20FE6200CC3333 /* Double.swift */; };
+		E570DF5C2A2B285A00A89502 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570DF5B2A2B285A00A89502 /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E565EF582A20F8D300CC3333 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		E565EF5A2A20F8FE00CC3333 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		E565EF5C2A20FE6200CC3333 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		E570DF5B2A2B285A00A89502 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				BBE8ACC02A1CA98500DE278F /* Color.swift */,
 				E565EF5A2A20F8FE00CC3333 /* PreviewProvider.swift */,
 				E565EF5C2A20FE6200CC3333 /* Double.swift */,
+				E570DF5B2A2B285A00A89502 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				BBE8ACC92A1CC7ED00DE278F /* HomeView.swift in Sources */,
 				BB900DCD2A2738A70045659C /* CoinImageView.swift in Sources */,
 				BBE8ACB22A1CA74200DE278F /* CryptoApp.swift in Sources */,
+				E570DF5C2A2B285A00A89502 /* UIApplication.swift in Sources */,
 				BB8B629B2A24B7790038F92B /* NetworkingManagement.swift in Sources */,
 				E538F5622A1D1063002CBE7D /* CircleButtonViewAnimation.swift in Sources */,
 				BB99A4FF2A28A61800E25FAD /* SearchBarView.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBarView: View {
     
     
-    @State var searchText:String = ""
+    @Binding var searchText:String
     
     var body: some View {
         HStack {
@@ -18,6 +18,19 @@ struct SearchBarView: View {
                 .foregroundColor(Color.theme.secondaryText)
             
             TextField("Search by name or symbol ...", text: $searchText)
+                .foregroundColor(Color.theme.accent)
+                .autocorrectionDisabled()
+                .overlay(alignment:.trailing) {
+                    Image(systemName: "xmark.circle.fill")
+                        .padding()
+                        .offset(x:10)
+                        .foregroundColor(Color.theme.accent)
+                        .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                        .onTapGesture {
+                            UIApplication.shared.endEditing()
+                            searchText = ""
+                        }
+                }
                 
         }
         .font(.headline)
@@ -25,7 +38,7 @@ struct SearchBarView: View {
         .background(
             RoundedRectangle(cornerRadius: 25)
                 .foregroundColor(Color.theme.background)
-                .shadow(radius: 10)
+                .shadow(color: Color.theme.accent.opacity(0.15), radius: 10)
         )
         .padding()
     }
@@ -33,6 +46,6 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView()
+        SearchBarView(searchText: .constant(""))
     }
 }
