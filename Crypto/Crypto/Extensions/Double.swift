@@ -80,7 +80,7 @@ extension Double {
     }
     
     
-    /// Convert a Double into string represntation with Percent symbol
+    /// Convert a Double into string representation with Percent symbol
     /// ```
     /// Convert 12.3456 to "12.34% "
     /// ```
