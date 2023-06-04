@@ -99,6 +99,7 @@ extension PortfolioView {
                 Text("Amount holding:")
                 TextField("Ex: 1.4", text: $quantityText)
                     .multilineTextAlignment(.trailing)
+                    .keyboardType(.decimalPad)
             }
             Divider()
             
@@ -118,6 +119,7 @@ extension PortfolioView {
         HStack(spacing:10) {
             Image(systemName: "checkmark")
                 .opacity(showCheckMark ? 1.0 : 0.0)
+                .foregroundColor(Color.theme.accent)
             
             Button {
                 saveButtonPressed()
