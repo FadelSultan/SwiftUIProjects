@@ -19,6 +19,8 @@ class HomeViewModel:ObservableObject {
     
     private let coinDataService = CoinDataService()
     private let marketDataService = MarketDataService()
+    private let portfolioDataService = PortfolioDataService()
+    
     private var cancellable = Set<AnyCancellable>()
     
     init() {
@@ -27,15 +29,16 @@ class HomeViewModel:ObservableObject {
     
     private func addSubscription() {
         
-        //By this publisher we gets all coins and updateed
+        //By this publisher we gets all coins and updated
         $searchText
             .combineLatest(coinDataService.$allCoins)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterCoins)
-            .sink {[weak self] retuenedCoins in
-                self?.allCoins = retuenedCoins
+            .sink {[weak self] returnedCoins in
+                self?.allCoins = returnedCoins
             }.store(in: &cancellable)
             
+        //Update marketData
         marketDataService.$marketData
             .map(mapMarketData)
             .sink { [weak self] returnedStatistics in
@@ -45,8 +48,29 @@ class HomeViewModel:ObservableObject {
             .store(in: &cancellable)
             
         
+        //Update Portfolio
+        
+        $allCoins
+            .combineLatest(portfolioDataService.$savedEntity)
+            .map { (coinModels ,portfolioEntities ) -> [CoinModel] in
+                coinModels.compactMap { (coin) -> CoinModel? in
+                    guard let entity = portfolioEntities.first(where: {$0.coinId == coin.id}) else {
+                        return nil
+                    }
+                    return coin.updateHoldings(amount: entity.amount)
+                }
+            }.sink {[weak self] returnedCoins in
+                self?.portfolioCoins = returnedCoins
+            }
+            .store(in: &cancellable)
+        
+        
     }
 
+    func updatePortfolio(coin: CoinModel, amount: Double) {
+        portfolioDataService.updatePortfolio(coin: coin, amount: amount)
+    }
+    
     private func mapMarketData(marketDataModel:MarketDataModel?) -> [StatisticModel] {
         
         var stats:[StatisticModel] = []

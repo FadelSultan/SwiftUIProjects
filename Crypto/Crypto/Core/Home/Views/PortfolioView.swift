@@ -37,7 +37,11 @@ struct PortfolioView: View {
                 }
                 
                 ToolbarItem(placement:.navigationBarTrailing) {
-                    trallingNavBarButtons
+                    trailingNavBarButtons
+                }
+            }.onChange(of: vm.searchText) { newValue in
+                if newValue == "" && selectedCoin == nil {
+                    removeSelectedCoin()
                 }
             }
         }
@@ -56,13 +60,13 @@ extension PortfolioView {
     private var coinLogoList:some View {
         ScrollView(.horizontal,showsIndicators: false) {
             LazyHStack(spacing:10) {
-                ForEach(vm.allCoins) { coin in
+                ForEach(vm.searchText.isEmpty ? vm.portfolioCoins :  vm.allCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
                         .onTapGesture {
                             withAnimation(.easeIn) {
-                                selectedCoin = coin
+                                updateSelectedCoin(coin: coin)
                             }
                         }
                         .background(
@@ -79,6 +83,17 @@ extension PortfolioView {
 
     }
     
+    private func updateSelectedCoin(coin:CoinModel) {
+        selectedCoin = coin
+        
+        if
+            let portfolioCoin = vm.portfolioCoins.first(where: {$0.id == coin.id}),
+            let amount = portfolioCoin.currentHoldings {
+            quantityText = "\(amount)"
+        }else {
+            quantityText = ""
+        }
+    }
     
     private func getCurrentValue() -> Double {
         if let quantity = Double(quantityText) {
@@ -115,7 +130,7 @@ extension PortfolioView {
         .font(.headline)
     }
     
-    private var trallingNavBarButtons:some View {
+    private var trailingNavBarButtons:some View {
         HStack(spacing:10) {
             Image(systemName: "checkmark")
                 .opacity(showCheckMark ? 1.0 : 0.0)
@@ -134,9 +149,14 @@ extension PortfolioView {
     }
     
     private func saveButtonPressed() {
-        guard let coin = selectedCoin else {return}
+        guard
+            let coin = selectedCoin,
+            let amount = Double(quantityText)
+        else {return}
         
         // Save to portfolio
+        vm.updatePortfolio(coin: coin, amount: amount )
+        
         
         //Show checkmark
         withAnimation(.easeIn) {
@@ -160,4 +180,6 @@ extension PortfolioView {
         selectedCoin = nil
         vm.searchText = ""
     }
+    
+    
 }
