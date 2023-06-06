@@ -38,32 +38,25 @@ class HomeViewModel:ObservableObject {
                 self?.allCoins = returnedCoins
             }.store(in: &cancellable)
             
+        
+        //Update Portfolio
+        $allCoins
+            .combineLatest(portfolioDataService.$savedEntity)
+            .map(mapGlobal)
+            .sink {[weak self] returnedCoins in
+                self?.portfolioCoins = returnedCoins
+            }
+            .store(in: &cancellable)
+        
         //Update marketData
         marketDataService.$marketData
+            .combineLatest($portfolioCoins)
             .map(mapMarketData)
             .sink { [weak self] returnedStatistics in
                 self?.statistics = returnedStatistics
                 
             }
             .store(in: &cancellable)
-            
-        
-        //Update Portfolio
-        
-        $allCoins
-            .combineLatest(portfolioDataService.$savedEntity)
-            .map { (coinModels ,portfolioEntities ) -> [CoinModel] in
-                coinModels.compactMap { (coin) -> CoinModel? in
-                    guard let entity = portfolioEntities.first(where: {$0.coinId == coin.id}) else {
-                        return nil
-                    }
-                    return coin.updateHoldings(amount: entity.amount)
-                }
-            }.sink {[weak self] returnedCoins in
-                self?.portfolioCoins = returnedCoins
-            }
-            .store(in: &cancellable)
-        
         
     }
 
@@ -71,7 +64,7 @@ class HomeViewModel:ObservableObject {
         portfolioDataService.updatePortfolio(coin: coin, amount: amount)
     }
     
-    private func mapMarketData(marketDataModel:MarketDataModel?) -> [StatisticModel] {
+    private func mapMarketData(marketDataModel:MarketDataModel? , portfolioCoins:[CoinModel]) -> [StatisticModel] {
         
         var stats:[StatisticModel] = []
         
@@ -81,14 +74,36 @@ class HomeViewModel:ObservableObject {
         
         let marketCup = StatisticModel(title: "Market Cup", value: data.marketCap , percentageChange: data.marketCapChangePercentage24HUsd)
         let volume = StatisticModel(title: "24h Volume", value: data.volume)
-        let btcDominace = StatisticModel(title: "BTC Dominace", value: data.btcDominace)
-        let portfolio = StatisticModel(title: "Portfolio Value", value: "$0.00",percentageChange: 0)
+        let btcDominance = StatisticModel(title: "BTC Dominance", value: data.btcDominace)
+        
+        
+        let portfolioValue = portfolioCoins
+                                .map({$0.currentsHoldingsValue})
+                                .reduce(0, +)
+        
+        let previousValue =
+        portfolioCoins
+            .map { (coin) -> Double in
+                let currentValue = coin.currentsHoldingsValue
+                let percentChange = (coin.priceChangePercentage24H ?? 0) / 100
+                let previousValue = currentValue / (1 + percentChange)
+                return previousValue
+            }
+            .reduce(0, +)
+        
+        
+        let percentageChange = ((portfolioValue - previousValue) /  previousValue) * 100
+        
+        let portfolio = StatisticModel(
+            title: "Portfolio Value",
+            value: portfolioValue.asCurrencyWith2Decimal(),
+            percentageChange: percentageChange)
         
         stats.append(contentsOf: [
             marketCup,
             volume,
-            btcDominace
-            ,portfolio
+            btcDominance,
+            portfolio
         ])
         
         return stats
@@ -105,5 +120,15 @@ class HomeViewModel:ObservableObject {
             $0.symbol.lowercased().contains(lowercasedText) ||
             $0.id.lowercased().contains(lowercasedText)
         })
+    }
+    
+    private func mapGlobal(coinModels:[CoinModel] ,portfolioEntities:[PortfolioEntity] ) -> [CoinModel] {
+        coinModels.compactMap { (coin) -> CoinModel? in
+            guard let entity = portfolioEntities.first(where: {$0.coinId == coin.id}) else {
+                return nil
+            }
+            return coin.updateHoldings(amount: entity.amount)
+        }
+
     }
 }
