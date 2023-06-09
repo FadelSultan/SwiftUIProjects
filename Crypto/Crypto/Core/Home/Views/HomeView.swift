@@ -13,9 +13,11 @@ struct HomeView: View {
     @State private var showPortfolio:Bool = false //animate right
     @State private var showPortfolioShow:Bool = false // new sheet
     
+    @State private var selectedCoin:CoinModel? = nil
+    @State private var isShowDetailView:Bool = false
+    
     var body: some View {
         ZStack {
-            
             
             Color.theme.background
                 .ignoresSafeArea()
@@ -47,6 +49,12 @@ struct HomeView: View {
                 Spacer(minLength: 0)
             }//:VSTACK
         }//:ZSTACK
+        
+        .navigationDestination(
+            isPresented: $isShowDetailView,
+            destination: {
+            DetailLoadingView(coin: $selectedCoin)
+        })
     }
 }
 
@@ -94,10 +102,13 @@ extension HomeView {
     private var allCoinsList:some View {
         List {
             ForEach(vm.allCoins) { coin in
-                CoinRowView(coin: coin, isShowHoldingsColumn: false)
+                CoinRowView(coin: coin, isShowHoldingsColumn: false).listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
-        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+        
         .listStyle(PlainListStyle())
         
     }
@@ -106,10 +117,20 @@ extension HomeView {
         List {
             ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, isShowHoldingsColumn: true)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
+                
             }
         }
-        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+
         .listStyle(PlainListStyle())
+    }
+    
+    private func segue(coin:CoinModel) {
+        selectedCoin = coin
+        isShowDetailView.toggle()
     }
     
     private var columnTitles:some View {

@@ -11,6 +11,7 @@ struct CoinRowView: View {
     
     let coin:CoinModel
     let isShowHoldingsColumn:Bool
+    
     var body: some View {
         HStack(spacing:0) {
             leftColumn
@@ -22,6 +23,8 @@ struct CoinRowView: View {
             
             columnRight
         }
+        .font(.headline)
+        .background(Color.theme.background.opacity(0.001))
         
     }
 }
