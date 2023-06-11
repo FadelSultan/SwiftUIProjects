@@ -9,7 +9,7 @@ import Foundation
 import Combine
 class CoinDetailViewModel:ObservableObject {
     
-    @Published var coinDetail:CoinDetailsModel? = nil
+    @Published var coinDetail:CoinDetailModel? = nil
     
     private let coinDetailService:CoinDetailDataService
     private var cancellable = Set<AnyCancellable>()

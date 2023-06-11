@@ -120,7 +120,7 @@ import Foundation
  }
  */
 
-struct CoinDetailsModel: Codable {
+struct CoinDetailModel: Codable {
     let id, symbol, name: String?
     let blockTimeInMinutes: Int?
     let hashingAlgorithm: String?
