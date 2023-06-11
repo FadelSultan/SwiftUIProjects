@@ -38,8 +38,8 @@ class CoinImageService {
         
         guard let url = URL(string: coin.image ?? "") else {return}
         
-        imageSubscription = NetworkingManagement.download(url: url)
-            .sink(receiveCompletion: NetworkingManagement.handleCompletion,
+        imageSubscription = NetworkingManager.download(url: url)
+            .sink(receiveCompletion: NetworkingManager.handleCompletion,
                   receiveValue: { [weak self] data in
                 
                 guard let self = self , let downloadedImage = UIImage(data: data) else {return}

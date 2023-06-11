@@ -7,15 +7,19 @@
 
 import Foundation
 import Combine
+
+
 class CoinDetailViewModel:ObservableObject {
     
-    @Published var coinDetail:CoinDetailsModel? = nil
+    @Published var coinDetail:CoinDetailModel? = nil
     
+    let coin:CoinModel
     private let coinDetailService:CoinDetailDataService
     private var cancellable = Set<AnyCancellable>()
     
     init(coin:CoinModel) {
         coinDetailService = CoinDetailDataService(coin: coin)
+        self.coin = coin
         addSubscribers()
     }
     
@@ -24,7 +28,7 @@ class CoinDetailViewModel:ObservableObject {
             .sink { [weak self] returnedCoinDetail in
                 self?.coinDetail = returnedCoinDetail
                 print("[😇] Received Coin Detail Data")
-                print(returnedCoinDetail )
+                print(returnedCoinDetail ?? "" )
             }
             .store(in: &cancellable)
     }
