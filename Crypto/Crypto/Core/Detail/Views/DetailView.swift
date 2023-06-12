@@ -41,39 +41,12 @@ struct DetailView: View {
                 Text("")
                     .frame(height: 150)
                 
-                Text("Overview")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
-                    .frame(maxWidth: .infinity , alignment: .leading)
-                
+                overviewTitle
                 Divider()
-                
-                LazyVGrid(
-                    columns: column,
-                    alignment: .leading ,
-                    spacing: spacing) {
-                        ForEach(0..<6) { _ in
-                            StatisticView(stat: StatisticModel(title: "Title", value: "Value"))
-                        }
-                    }
-                
-                Text("Additional")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
-                    .frame(maxWidth: .infinity , alignment: .leading)
-                
+                overviewGrad
+                additionalTitle
                 Divider()
-                
-                LazyVGrid(
-                    columns: column,
-                    alignment: .leading ,
-                    spacing: spacing) {
-                        ForEach(0..<6) { _ in
-                            StatisticView(stat: StatisticModel(title: "Title", value: "Value"))
-                        }
-                    }
+                additionalGrad
                 
             }
             .padding()
@@ -87,5 +60,45 @@ struct DetailView_Previews: PreviewProvider {
         NavigationView {
             DetailView(coin: dev.coin)
         }
+    }
+}
+
+extension DetailView {
+    private var overviewTitle: some View {
+        Text("Overview")
+            .font(.title)
+            .bold()
+            .foregroundColor(Color.theme.accent)
+            .frame(maxWidth: .infinity , alignment: .leading)
+    }
+    
+    private var additionalTitle:some View {
+        Text("Additional")
+            .font(.title)
+            .bold()
+            .foregroundColor(Color.theme.accent)
+            .frame(maxWidth: .infinity , alignment: .leading)
+    }
+    
+    private var overviewGrad:some View {
+        LazyVGrid(
+            columns: column,
+            alignment: .leading ,
+            spacing: spacing) {
+                ForEach(vm.overviewStatistics) { stat in
+                    StatisticView(stat: stat)
+                }
+            }
+    }
+    
+    private var additionalGrad:some View {
+        LazyVGrid(
+            columns: column,
+            alignment: .leading ,
+            spacing: spacing) {
+                ForEach(vm.additionalStatistics) { stat in
+                    StatisticView(stat: stat)
+                }
+            }
     }
 }
