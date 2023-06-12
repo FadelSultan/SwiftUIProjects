@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB6BDEBC2A37188800AA6394 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6BDEBB2A37188800AA6394 /* ChartView.swift */; };
+		BB6BDEBE2A37221E00AA6394 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6BDEBD2A37221E00AA6394 /* Date.swift */; };
 		BB8883B22A2C8917004913CB /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8883B12A2C8917004913CB /* PortfolioView.swift */; };
 		BB8883B42A2C8D8D004913CB /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8883B32A2C8D8D004913CB /* XMarkButton.swift */; };
 		BB8B629B2A24B7790038F92B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B629A2A24B7790038F92B /* NetworkingManager.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB6BDEBB2A37188800AA6394 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		BB6BDEBD2A37221E00AA6394 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB8883B12A2C8917004913CB /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		BB8883B32A2C8D8D004913CB /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
 		BB8B629A2A24B7790038F92B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				E565EF5A2A20F8FE00CC3333 /* PreviewProvider.swift */,
 				E565EF5C2A20FE6200CC3333 /* Double.swift */,
 				E570DF5B2A2B285A00A89502 /* UIApplication.swift */,
+				BB6BDEBD2A37221E00AA6394 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				E572C1A02A33635000A52F44 /* DetailView.swift */,
+				BB6BDEBB2A37188800AA6394 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,9 +355,11 @@
 				E557B6EA2A2E223100D7E85E /* PortfolioContainer.xcdatamodeld in Sources */,
 				E54BCC712A2B78DE0082628D /* StatisticModel.swift in Sources */,
 				E565EF592A20F8D300CC3333 /* CoinRowView.swift in Sources */,
+				BB6BDEBC2A37188800AA6394 /* ChartView.swift in Sources */,
 				BB8883B42A2C8D8D004913CB /* XMarkButton.swift in Sources */,
 				BB8DD0282A35A34C00106CDF /* CoinDataService.swift in Sources */,
 				E556B0E52A23A42600CB56E8 /* HomeViewModel.swift in Sources */,
+				BB6BDEBE2A37221E00AA6394 /* Date.swift in Sources */,
 				BB8DD0232A35A32400106CDF /* MarketDataService.swift in Sources */,
 				BBE8ACB42A1CA74200DE278F /* ContentView.swift in Sources */,
 				BB99A4FD2A28884200E25FAD /* LocalFileManager.swift in Sources */,

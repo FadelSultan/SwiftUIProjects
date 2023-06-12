@@ -54,6 +54,7 @@ extension CoinRowView {
                 .foregroundColor(Color.theme.accent)
         }
         .font(.subheadline)
+        .background(Color.theme.background.opacity(0.001))
 
     }
     
