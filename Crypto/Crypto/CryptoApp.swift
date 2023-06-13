@@ -20,7 +20,7 @@ struct CryptoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationStack {
                 HomeView()
                     .toolbar(.visible, for: .navigationBar)
             }

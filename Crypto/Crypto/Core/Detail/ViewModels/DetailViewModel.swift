@@ -9,12 +9,15 @@ import Foundation
 import Combine
 
 
-class CoinDetailViewModel:ObservableObject {
+class DetailViewModel:ObservableObject {
     
     @Published var overviewStatistics:[StatisticModel] = []
     @Published var additionalStatistics:[StatisticModel] = []
-    
     @Published var coin:CoinModel
+    @Published var coinDescription:String? = nil
+    @Published var websiteURL:String? = nil
+    @Published var redditURL:String? = nil
+    
     private let coinDetailService:CoinDetailDataService
     private var cancellable = Set<AnyCancellable>()
     
@@ -31,6 +34,14 @@ class CoinDetailViewModel:ObservableObject {
             .sink { [weak self] returnedArrays in
                 self?.overviewStatistics = returnedArrays.overView
                 self?.additionalStatistics = returnedArrays.additional
+            }
+            .store(in: &cancellable)
+        
+        coinDetailService.$coinDetails
+            .sink {[weak self] returnedCoinDetail in
+                self?.coinDescription = returnedCoinDetail?.readableDescription
+                self?.websiteURL = returnedCoinDetail?.links?.homepage?.first
+                self?.redditURL = returnedCoinDetail?.links?.subredditURL
             }
             .store(in: &cancellable)
     }
