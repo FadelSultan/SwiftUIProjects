@@ -12,6 +12,7 @@ struct CryptoApp: App {
     
     
     @StateObject private var vm = HomeViewModel()
+    @State private var showLunchView:Bool = true
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor(Color.theme.accent)]
@@ -20,11 +21,22 @@ struct CryptoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                HomeView()
-                    .toolbar(.visible, for: .navigationBar)
+            ZStack {
+                
+                NavigationStack {
+                    HomeView()
+                        .toolbar(.visible, for: .navigationBar)
+                }
+                .environmentObject(vm)
+                
+                ZStack {
+                    if showLunchView{
+                        LunchScreenView(showLunchView: $showLunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }.zIndex(2.0)
+                
             }
-            .environmentObject(vm)
         }
     }
 }
