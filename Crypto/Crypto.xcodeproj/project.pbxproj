@@ -123,10 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				BB8DD0272A35A34C00106CDF /* CoinDataService.swift */,
-				BB8DD0162A359EF100106CDF /* CoinImageService.swift */,
 				BB8DD01F2A35A32400106CDF /* MarketDataService.swift */,
 				BB8DD0202A35A32400106CDF /* PortfolioDataService.swift */,
 				BB8DD01D2A35A12100106CDF /* CoinDetailDataService.swift */,
+				BB8DD0162A359EF100106CDF /* CoinImageService.swift */,
 			);
 			name = Service;
 			path = Crypto/Service;

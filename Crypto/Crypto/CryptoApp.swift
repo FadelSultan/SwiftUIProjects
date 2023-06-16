@@ -22,7 +22,6 @@ struct CryptoApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                
                 NavigationStack {
                     HomeView()
                         .toolbar(.visible, for: .navigationBar)
@@ -35,7 +34,6 @@ struct CryptoApp: App {
                             .transition(.move(edge: .leading))
                     }
                 }.zIndex(2.0)
-                
             }
         }
     }

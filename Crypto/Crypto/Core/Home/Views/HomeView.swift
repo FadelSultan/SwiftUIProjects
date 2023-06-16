@@ -29,21 +29,22 @@ struct HomeView: View {
             VStack {
                 
                 HomeHeader
-                
                 HomeStatsView(showPortfolio: $showPortfolio)
-                
                 SearchBarView(searchText: $vm.searchText)
-                
                 columnTitles
-                
                 if !showPortfolio {
                     allCoinsList
                     .transition(.move(edge: .leading))
                 }
-                
                 if showPortfolio {
-                    portfolioCoinsList
-                        .transition(.move(edge: .trailing))
+                    ZStack(alignment: .top) {
+                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                            portfolioEmptyText
+                        }else {
+                            portfolioCoinsList
+                        }
+                    }
+                    .transition(.move(edge: .trailing))
                 }
 
                 Spacer(minLength: 0)
@@ -131,9 +132,13 @@ extension HomeView {
         .listStyle(PlainListStyle())
     }
     
-    private func segue(coin:CoinModel) {
-        selectedCoin = coin
-        isShowDetailView.toggle()
+    private var portfolioEmptyText:some View {
+        Text("You haven't added any coins to your portfolio yet. Click the + button to get started! 🧐")
+            .font(.callout)
+            .foregroundColor(Color.theme.secondaryText)
+            .fontWeight(.medium)
+            .multilineTextAlignment(.center)
+            .padding(50)
     }
     
     private var columnTitles:some View {
@@ -195,5 +200,9 @@ extension HomeView {
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
     }
-
+    
+    private func segue(coin:CoinModel) {
+        selectedCoin = coin
+        isShowDetailView.toggle()
+    }
 }

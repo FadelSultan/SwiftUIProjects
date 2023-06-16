@@ -24,9 +24,8 @@ class NetworkingManager {
     
     static func download(url:URL) -> AnyPublisher<Data,Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap({try handleUrlResponse(output: $0, url: url)})
-            .receive(on: DispatchQueue.main)
+            .retry(3) // When fail to get data this line while try 3 times after that without success will continue to show the error
             .eraseToAnyPublisher()
     }
     
